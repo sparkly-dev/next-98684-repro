@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
-};
+// Cache Components / Partial Prefetching are left off on purpose: the bug is in
+// the default prefetch path, where a dynamic route with a `loading.tsx` is
+// prefetched "up to the first loading boundary".
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
